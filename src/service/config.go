@@ -1,5 +1,6 @@
 package service
 
+var errorMessage string
 import (
 	"demo1/src/model"
 	"log"
@@ -13,46 +14,57 @@ func CheckConfig(config model.Rule) bool {
 
 	if !isValidAid(config.Aid) {
 		log.Println(" invalid Aid")
+		errorMessage = " invalid Aid"
 		return false
 	}
 	if !isValidPlatform(config.Platform) {
 		log.Println(" invalid Platform")
+		errorMessage = " invalid Platform"
 		return false
 	}
 	if !isValidDownloadUrl(config.DownloadUrl) {
 		log.Println(" invalid DownloadUrl")
+		errorMessage = " invalid DownloadUrl"
 		return false
 	}
 	if !isValidUVC(config.UpdateVersionCode) {
 		log.Println(" invalid UpdateVersionCode")
+		errorMessage = " invalid UpdateVersionCode"
 		return false
 	}
 	if !isValidMd5(config.Md5) {
 		log.Println(" invalid Md5")
+		errorMessage = " invalid Md5"
 		return false
 	}
 	if !isValidDeviceIdList(config.DeviceIdList) {
 		log.Println(" invalid DeviceIdList")
+		errorMessage = " invalid DeviceIdList"
 		return false
 	}
 	if !isValidMaxMinUVC(config.MaxUpdateVersionCode, config.MinUpdateVersionCode) {
 		log.Println(" invalid MaxUpdateVersionCode or MinUpdateVersionCode")
+		errorMessage = " invalid MaxUpdateVersionCode or MinUpdateVersionCode"
 		return false
 	}
 	if !isValidMaxMinOsApi(config.MaxOsApi, config.MinOsApi) {
 		log.Println(" invalid MaxOsApi or MinOsApi")
+		errorMessage = " invalid MaxOsApi or MinOsApi"
 		return false
 	}
 	if !isValidCpuArch(config.CpuArch) {
 		log.Println(" invalid CpuArch")
+		errorMessage = " invalid CpuArch"
 		return false
 	}
 	if !isValidTitle(config.Title) {
 		log.Println(" invalid Title")
+		errorMessage = " invalid Title"
 		return false
 	}
 	if !isValidUpdateTips(config.UpdateTips) {
 		log.Println(" invalid UpdateTips")
+		errorMessage = " invalid UpdateTips"
 		return false
 	}
 
